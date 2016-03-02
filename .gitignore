@@ -1,0 +1,12 @@
+*.DS_Store
+bin/
+target
+.classpath
+.project
+.settings/
+.idea
+*.iml
+WebRoot/META-INF
+.metadata
+.myeclipse
+Servers
