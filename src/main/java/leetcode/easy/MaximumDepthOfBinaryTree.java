@@ -26,7 +26,7 @@ public class MaximumDepthOfBinaryTree {
     
     public static int maxDepth1(TreeNode root){
         int depth = 0,max=0;
-        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<MaximumDepthOfBinaryTree.TreeNode>();
         TreeNode p = root;
         stack.push(p);
         while(!stack.isEmpty()){
