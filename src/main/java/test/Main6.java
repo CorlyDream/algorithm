@@ -9,6 +9,19 @@ public class Main6 {
 		System.out.println(Arrays.toString(next));
 	}
 	
+	public static int kmp(String source, String patten){
+		int[] next = getNext(patten);
+		int i=0,j=0;
+		while(i<source.length() && j<patten.length()){
+			if (j==-1 || source.charAt(i) == patten.charAt(j)) {
+				i++;j++;
+			}else{
+				j = next[j];
+			}
+		}
+		return i;
+	}
+	
 	public static int[] getNext(String str){
 		char[] cs = str.toCharArray();
 		int[] next = new int[cs.length+1];
