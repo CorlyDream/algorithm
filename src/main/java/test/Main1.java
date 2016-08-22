@@ -1,38 +1,33 @@
 package test;
 
+import java.util.Arrays;
+
 public class Main1 {
 	public static void main(String[] args) {
-		System.out.println(isValid("()[]{}"));
+//		System.out.println(countPrimes(3));
+		int[] a = {1,2,4,3};
+		Arrays.sort(a);
+		System.out.println(Arrays.toString(a));
 	}
 	
-	public static boolean isValid(String s) {
-        char[] stack = new char[s.length()/2+2];
-        int top = -1;
-        int i=0;
-        stack[++top] = s.charAt(i++);
-        while(i<s.length() && top >=-1){
-            switch(s.charAt(i)){
-                case ')':
-                    if(stack[top] != '(')
-                        return false;
-                    break;
-                case ']':
-                    if(stack[top] != '[')
-                        return false;
-                    break;
-                case '}':
-                    if(stack[top] != '{')
-                        return false;
-                    break;
-                default:
-                    stack[++top] = s.charAt(i++);
-                    continue;
-            }
-            top--;
-            i++;
-           
-        }
-        return top == -1 && i==s.length();
+	public static int countPrimes(int n) {
+        boolean[] notPrime = new boolean[n];
+        double len = Math.sqrt(n);
         
+        for(int i=2; i<len; i++){
+            if(!notPrime[i]){
+                for(int j=i; j*i<n; j++){
+                    notPrime[i*j] = true;
+                }
+            }
+        }
+        int result = 0;
+        for(int i=2; i<n; i++){
+            if(!notPrime[i])
+                result++;
+        }
+        return result;
     }
+
+	
 }
