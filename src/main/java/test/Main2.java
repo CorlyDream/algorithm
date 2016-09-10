@@ -1,9 +1,15 @@
 package test;
 
+import java.util.Arrays;
+
 public class Main2 {
 
 	public static void main(String[] args) {
-		System.out.println(isPalindrome1(123));
+//		System.out.println(isPalindrome1(123));
+		char a = '2';
+		int[] b = new int[3];
+		b[Character.getNumericValue(a)]++;
+		System.out.println(Arrays.toString(b));
 	}
 	public static boolean isPalindrome(int x) {
 		if(x<0 || (x>0 && x%10==0))
