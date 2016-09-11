@@ -1,7 +1,5 @@
 package leetcode.easy;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class MaximumDepthOfBinaryTree {
@@ -31,8 +29,8 @@ public class MaximumDepthOfBinaryTree {
         stack.push(p);
         while(!stack.isEmpty()){
             while(p.left != null){
-                depth++;
                 p = p.left;
+                depth++;
                 stack.push(p);
             }
             if(p.right != null){

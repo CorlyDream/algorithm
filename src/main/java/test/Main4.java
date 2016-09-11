@@ -17,6 +17,7 @@ public class Main4 {
 	public static String longestCommonPrefix(String[] strs) {
         if(strs == null || strs.length == 0)    return "";
         String pre = strs[0];
+        StringBuffer sb = new StringBuffer();
         int i = 1;
         while(i < strs.length){
             while(strs[i].indexOf(pre) != 0)
