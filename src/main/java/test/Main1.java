@@ -1,33 +1,41 @@
 package test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main1 {
+
 	public static void main(String[] args) {
-//		System.out.println(countPrimes(3));
-		int[] a = {1,2,4,3};
-		Arrays.sort(a);
-		System.out.println(Arrays.toString(a));
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+	    int i,j;
+		boolean[] arrTemp = new boolean[1000];
+		for (i=2; i<100; i++){
+			if(!arrTemp[i]){
+				for(j=i; j*i<arrTemp.length; j++){
+					arrTemp[i*j] = true;
+				}
+			}
+		}
+		List<Integer> primes = new ArrayList<>();
+		for(i=0; i<arrTemp.length; i++){
+			if(!arrTemp[i])
+				primes.add(i);
+		}
+		int count = 0;
+		for(i=0; i<primes.size(); i++){
+			for(j=0; j<primes.size(); j++){
+				if (primes.get(i)+primes.get(j)==n){
+					count++;
+				}
+			}
+		}
+		System.out.println((int)(Math.ceil(count/2.0)));
 	}
 	
-	public static int countPrimes(int n) {
-        boolean[] notPrime = new boolean[n];
-        double len = Math.sqrt(n);
-        
-        for(int i=2; i<len; i++){
-            if(!notPrime[i]){
-                for(int j=i; j*i<n; j++){
-                    notPrime[i*j] = true;
-                }
-            }
-        }
-        int result = 0;
-        for(int i=2; i<n; i++){
-            if(!notPrime[i])
-                result++;
-        }
-        return result;
-    }
+
 
 	
 }
+

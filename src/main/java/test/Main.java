@@ -5,30 +5,26 @@ public class Main{
 		
 	public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
-        	StringBuffer stringBuffer = new StringBuffer();
-        	int n = in.nextInt();
-        	for(int i=0; i<n; i++){
-        		int k = in.nextInt();
-        		if(k%2==0){
-        			stringBuffer.append(reverse(k)+" ");
-        		}else{
-        			stringBuffer.append(k+" ");
-        		}
-        	}
-        	stringBuffer.deleteCharAt(stringBuffer.length()-1);
-        	System.out.println(stringBuffer.toString());
+        int n = in.nextInt();
+        int start = -90;
+        int end = 90;
+        int[] res = new int[6];
+        int mid;
+        for(int i=0; i<res.length; i++){
+            mid = (start + end)/2;
+            if (n<mid){
+                res[i] = 0;
+                end = mid;
+            }else {
+                res[i] = 1;
+                start = mid;
+            }
         }
+        for(int i=0; i<res.length; i++){
+            System.out.print(res[i]);
+        }
+        System.out.println();
     }
-    
-    public static int reverse(int a){
-        int res = 0;
-        while(a>0){
-            res = res<<1;
-            res += a&1;
-            a = a>>1;
-        }
 
-        return res;
-    }
+
 }
