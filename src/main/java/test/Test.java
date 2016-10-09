@@ -1,5 +1,7 @@
 package test;
 
+import java.util.ArrayList;
+
 /**
  * Created by corly on 2016/8/7.
  */
@@ -16,8 +18,14 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        System.out.println(Test.x);
-        print();
-
+        int a = 0xa;
+        int i = 2;
+        System.out.println(i&0xa);
+        int num = 131072;
+        boolean b = (i & 0xaaaa) == 0 ?true:false;
+        System.out.println();
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(3);
+        System.out.println(list.get(1));
     }
 }
