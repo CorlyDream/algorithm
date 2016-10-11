@@ -1,39 +1,16 @@
 package ceping.qiniu;
 
 import java.util.Scanner;
-<<<<<<< HEAD
-
-/**
- * Created by corly on 2016/9/30.
-=======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**^\s\{
  * Created by corly on 2016/9/24.
->>>>>>> 951833c98ff59861945b3969495d928e6d595de6
  */
 public class Main1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-<<<<<<< HEAD
-        int[] a = new int[1000];
-        long pre = 1;
-        long curr= 1;
-        int res  = 0;
-        long tmp;
-        for(int i=3; i<=1000; i++) {
-            tmp = curr;
-            curr = pre + curr;
-            pre = tmp;
-            if (curr % 7 == 0) {
-                res++;
-            }
 
-        }
-        System.out.println(res);
-    }
-=======
         StringBuilder sb = new StringBuilder();
         String pattern1 = "\"\\w+\": *\"\\w+\",";
         String pattern2 = "\"\\w+\": *\\[(.*)\\]";
@@ -60,5 +37,4 @@ public class Main1 {
     }
 
 
->>>>>>> 951833c98ff59861945b3969495d928e6d595de6
 }
