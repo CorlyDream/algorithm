@@ -22,7 +22,7 @@ public class Main1 {
 
             }
         }
-
+        return 1;
     }
 
     public static boolean validTree(int n, int[][] edges) {
