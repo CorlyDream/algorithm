@@ -23,7 +23,7 @@ public class Main2 {
 	}
 
 	public static void main(String[] args) throws IOException {
-		System.out.println(maxCommanFactor(2,60));
+		System.out.println(maxCommanFactor(5,5));
 	}
 
 	public static int maxCommanFactor(int a, int b){
@@ -49,6 +49,7 @@ public class Main2 {
 			}
 		}
 		return res;
+
 	}
 
 }
