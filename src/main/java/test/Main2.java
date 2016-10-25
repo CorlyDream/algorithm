@@ -1,28 +1,55 @@
 package test;
 
 
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main2 {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		int n = in.nextInt();
-		int[] x = new int[n];
-		int[] y = new int[n];
+	private static class A{
+		int i=0;
+
+		public A() {
+			i = 2;
+		}
+	}
+
+	public static class B extends A{
+		public B(){
+			i=4;
+		}
+		public void print(){
+			System.out.println(i);
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		System.out.println(maxCommanFactor(5,5));
+	}
+
+	public static int maxCommanFactor(int a, int b){
 		int i;
-		for(i=0; i<n; i++) {
-			x[i] = in.nextInt();
+		int gap = b/a;
+		int[] fac = getFactors(gap);
+		i=0;
+		while (fac[i]>0){
+			i++;
 		}
-		for(i=0; i<n; i++) {
-			y[i] = in.nextInt();
+
+		return (int)(Math.pow(2, i+1)-2);
+	}
+
+
+	public static int[] getFactors(int n){
+		int j=0;
+		int[] res = new int[100];
+		for(int i=2; i<=Math.sqrt(n); i++){
+			while(n%i==0){
+				res[j++] = i;
+				n = n/i;
+			}
 		}
-		int min = 3000;
-		for(i=0; i<n; i++) {
-			int tmp = x[i]+y[i]-2;
-		    min = min>tmp?tmp:min;
-		}
-		System.out.println(min);
+		return res;
+
 	}
 
 }
