@@ -3,6 +3,7 @@ package test;
 public class Main3 {
 
 	public static void main(String[] args) {
+
 		// TODO Auto-generated method stub
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(0);
