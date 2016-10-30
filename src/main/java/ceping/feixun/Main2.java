@@ -29,23 +29,23 @@ public class Main2 {
     }
 
     public static void main(String[] args) {
-//        String ptrn = "okko";
-//
-//        String str = "apple pear pear apple";
-//        StringBuilder sb = new StringBuilder(ptrn);
-//        sb.delete(sb.lastIndexOf("kk"),sb.lastIndexOf("kk")+2 );
-//        System.out.println(sb);
-//        System.out.println(System.getProperty("user.dir"));
-//        System.out.println(exam(ptrn, str));
-        TreeNode a = new TreeNode("A");
-        TreeNode b = new TreeNode("B");
-        TreeNode c = new TreeNode("C");
-        a.left = b;
-        a.right = c;
-        List<String> res  =rightSideView(a);
-        for (String str : res) {
-            System.out.println(str);
-        }
+        String ptrn = "okko";
+
+        String str = "apple pear pear apple";
+        StringBuilder sb = new StringBuilder(ptrn);
+        sb.delete(sb.lastIndexOf("kk"),sb.lastIndexOf("kk")+2 );
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println(sb);
+        System.out.println(exam(ptrn, str));
+//        TreeNode a = new TreeNode("A");
+//        TreeNode b = new TreeNode("B");
+//        TreeNode c = new TreeNode("C");
+//        a.left = b;
+//        a.right = c;
+//        List<String> res  =rightSideView(a);
+//        for (String str : res) {
+//            System.out.println(str);
+//        }
     }
 
       public static class TreeNode {

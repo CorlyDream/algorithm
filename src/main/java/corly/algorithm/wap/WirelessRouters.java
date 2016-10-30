@@ -27,10 +27,39 @@ public class WirelessRouters {
             System.out.println(rooms[sortPoints[0]].maxPoint);
             return;
         }
+        int max=0,k;
+        Room tmp;
+        int[] side;
+        for(i=0; i<M; i++) {
+            j = sortPoints[i];
+            if (rooms[j].valid) {
+                rooms[j].valid = false;
+                max += rooms[j].point;
+                k=0;
+                side = rooms[j].side;
+                while (k < 3 && (tmp=rooms[side[k]]).valid) {
+                    max += tmp.point;
+                    k++;
+                    tmp.valid = false;
+                }
+            }
+        }
 
     }
 
 
+
+    public static int getMax(Room[] rooms) {
+        int max=0,index=-1;
+        for(int i=0; i<rooms.length; i++) {
+            if (rooms[i].valid && rooms[i].maxPoint > max) {
+                max = rooms[i].maxPoint;
+                index = i;
+            }
+        }
+        return index;
+
+    }
 
     public static int[] sortByMaxPoint(Room[] rooms){
         int[] res = new int[rooms.length];

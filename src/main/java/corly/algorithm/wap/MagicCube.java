@@ -20,6 +20,7 @@ import java.util.Scanner;
  2 2 2 1 1 1 1 2 2
  2 1 2 1 1 1 1 1 2
 
+ 127a1d25-967b-4229-afab-a28d84874a1a
  */
 public class MagicCube {
 
