@@ -10,9 +10,9 @@ public class Main2  {
     }
     public static void main(String[] argv) {
         int i = 0;
-//        for (out(‘A’); out(‘B’) && (i < 2); out(‘C’)) {
-//            i++;
-//            out(‘D’);
-//        }
+        for (out('A'); out('B') && (i < 2); out('C')) {
+            i++;
+            out('D');
+        }
     }
 }
