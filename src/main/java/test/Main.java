@@ -1,29 +1,18 @@
 package test;
-import java.util.Scanner;
 
-public class Main{
-		
-	public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int start = -90;
-        int end = 90;
-        int[] res = new int[6];
-        int mid;
-        for(int i=0; i<res.length; i++){
-            mid = (start + end)/2;
-            if (n<mid){
-                res[i] = 0;
-                end = mid;
-            }else {
-                res[i] = 1;
-                start = mid;
-            }
+public class Main {
+    public static void main(String[] args) {
+//        System.out.println(fib(1000));
+        System.out.println(0.11+2001299.32);
+    }
+
+    public static int fib(int n) {
+        int cnt = 0;
+        while (n > 0) {
+            cnt++;
+            n = n & (n - 1);
         }
-        for(int i=0; i<res.length; i++){
-            System.out.print(res[i]);
-        }
-        System.out.println();
+        return cnt;
     }
 
 

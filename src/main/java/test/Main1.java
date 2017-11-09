@@ -1,43 +1,41 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main1 {
 
-	protected String main1 = "main1";
-
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
-	    int i,j;
-		boolean[] arrTemp = new boolean[1000];
-		for (i=2; i<100; i++){
-			if(!arrTemp[i]){
-				for(j=i; j*i<arrTemp.length; j++){
-					arrTemp[i*j] = true;
+	   	int m = in.nextInt();
+	   	int res = -1;
+	   	int count=Math.min(n, m);
+	   	int min = count;
+        int max = Math.max(n, m);
+        for (int i = 1; i <= min; i++) {
+			for (int j = i+1; j <= max; j++) {
+				if ((res = count(i, j)) > 0) {
+				    if(j<= min)
+				        count += 2;
+				    else
+				        count++;
 				}
 			}
+//			System.out.println("count="+count);
 		}
-		List<Integer> primes = new ArrayList<>();
-		for(i=0; i<arrTemp.length; i++){
-			if(!arrTemp[i])
-				primes.add(i);
-		}
-		int count = 0;
-		for(i=0; i<primes.size(); i++){
-			for(j=0; j<primes.size(); j++){
-				if (primes.get(i)+primes.get(j)==n){
-					count++;
-				}
-			}
-		}
-		System.out.println((int)(Math.ceil(count/2.0)));
+		System.out.println(count);
+
 	}
-	
 
-
+	public static int count(long a, long b) {
+		double res = Math.sqrt(a*b);
+//		System.out.println(a+"--"+b+":"+res);
+		int ret = (int) res;
+		if (ret == res) {
+			return ret;
+		}
+		return -1;
+	}
 	
 }
 
